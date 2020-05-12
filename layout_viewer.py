@@ -80,6 +80,7 @@ if __name__ == '__main__':
 
     # Prepare points cloud
     all_xyz = np.stack([xs, ys, zs], -1).reshape(-1, 3)
+    # all_xyz = np.stack([xs, ys, zs]).reshape(-1, 3)
     all_rgb = equirect_texture.reshape(-1, 3)
     if args.ignore_ceiling:
         mask = (~ceil_mask).reshape(-1)

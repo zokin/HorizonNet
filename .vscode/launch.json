@@ -1,0 +1,62 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Layout Viewer",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                // "--img", "./data/001.jpg",
+                // "--layout", "./data/001.json",
+                "--img", "./data/m3d_001.png",
+                "--layout", "./data/m3d_001.json",
+                "--scale", "1.0",
+                // "--ignore_floor",
+                "--ignore_ceiling",
+                // "--ignore_wall",
+                // "--ignore_wireframe",
+            ]
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--pth",
+                "./ckpt/resnet50_rnn__st3d.pth",
+                // "--img_glob", "./data/001.jpg",
+                // "--img_glob", "./data/m3d_001.png",
+                // "--img_glob", "./data/s2d3d_001.png",
+                // "--img_glob", "./data/s2d3d_002.png",
+                // "--img_glob", "./data/scg_001.png",
+                "--img_glob",
+                "./data/scg_002.png",
+                "--output_dir",
+                "./data/",
+                "--visualize",
+                // "--flip",
+                // "--force_cuboid",
+                "--no_cuda",
+            ]
+        },
+        {
+            "name": "PanoStretch",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--i", "H:\\Data\\Kujiale\\image\\3FO4IDEI1LAV_485145_full.jpg",
+                "--i_gt", "H:\\Data\\Kujiale\\cor_idx\\3FO4IDEI1LAV_485145.txt",
+                "--o", "sample.png",
+            ]
+        }
+    ]
+}
