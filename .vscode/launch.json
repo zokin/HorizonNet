@@ -5,6 +5,33 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Metrics",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--dt_glob", "D:\\Data\\Structure3D\\indoor_360\\horizon_net\\*.json",
+                "--gt_glob", "D:\\Data\\Structure3D\\indoor_360\\cor_idx\\*.txt",
+            ]
+        },
+        {
+            "name": "Inference",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--img_glob",
+                "D:\\Data\\Structure3D\\indoor_360\\image\\*_full.jpg",
+                "--output_dir",
+                "D:\\Data\\Structure3D\\indoor_360\\horizon_net\\",
+                "--visualize",
+                "--pth",
+                "./ckpt/resnet50_rnn__panos2d3d.pth",
+            ]
+        },
+        {
             "name": "Python: Layout Viewer",
             "type": "python",
             "request": "launch",
@@ -13,9 +40,12 @@
             "args": [
                 // "--img", "./data/001.jpg",
                 // "--layout", "./data/001.json",
-                "--img", "./data/m3d_001.png",
-                "--layout", "./data/m3d_001.json",
-                "--scale", "1.0",
+                "--img",
+                "./data/m3d_001.png",
+                "--layout",
+                "./data/m3d_001.json",
+                "--scale",
+                "1.0",
                 // "--ignore_floor",
                 "--ignore_ceiling",
                 // "--ignore_wall",
@@ -53,9 +83,12 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "args": [
-                "--i", "H:\\Data\\Kujiale\\image\\3FO4IDEI1LAV_485145_full.jpg",
-                "--i_gt", "H:\\Data\\Kujiale\\cor_idx\\3FO4IDEI1LAV_485145.txt",
-                "--o", "sample.png",
+                "--i",
+                "H:\\Data\\Kujiale\\image\\3FO4IDEI1LAV_485145_full.jpg",
+                "--i_gt",
+                "H:\\Data\\Kujiale\\cor_idx\\3FO4IDEI1LAV_485145.txt",
+                "--o",
+                "sample.png",
             ]
         }
     ]
